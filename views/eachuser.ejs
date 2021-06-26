@@ -31,7 +31,7 @@ td {
     width:100%;
 
     background-image:url(https://i.pinimg.com/originals/de/06/e1/de06e1b1e4a49f033f52d1ae0a2d49ad.png);
-    background-color:#8e24aa;
+    background-color:#89dee2;
     background-size:cover;
   }
 
@@ -63,7 +63,7 @@ td {
   }
   a:hover {
     text-decoration: none;
-    color: #8e24aa;
+    color: #89dee2;
     font-size:2.5rem;
   }
   * { padding:0;margin:0;}
@@ -115,7 +115,7 @@ td {
   }
   a:hover {
     text-decoration: none;
-    color: #8e24aa;
+    color: #89dee2;
     font-size:2.1rem;
   }
 
@@ -150,11 +150,11 @@ td {
   </div>
 
   <div class="col-xs-12 col-sm-6 col-md-10">
-    <div class="" style="color:#8e24aa;">
+    <div class="" style="color:#89dee2;">
       <h2  style="  border-radius: 3px;"> &nbsp;&nbsp;<a style="" href="/eachuser/<%=theuser._id%>"><%=theuser.displayname%></a></h2>
         <p> &nbsp;&nbsp;&nbsp;About the author:<br> &nbsp;&nbsp;&nbsp;<%=theuser.about%></p>
         <table width="100%">
-        <tr  style="background-color: #8e24aa; color:white; padding:6px;">
+        <tr  style="background-color: #89dee2; color:white; padding:6px;">
         	<th >Blogs</th>
           <th>Followers</th>
           <th>Following</th>
@@ -169,18 +169,18 @@ td {
     </div>
   </div>
 </div>
-</div><hr style="height:3px;border-width:0;color:gray;background-color:#8e24aa">
-  <h1 style="background-color:#8e24aa; opacity:; padding:5px; border-radius:3px;"> &nbsp;All blogs:</h1><br>
+</div><hr style="height:3px;border-width:0;color:gray;background-color:#89dee2">
+  <h1 style="background-color:#89dee2; opacity:; padding:5px; border-radius:3px;"> &nbsp;All blogs:</h1><br>
 
   <%for(var i=0;i<theuser.secret.length;i++){%>
 <h1 ><%= theuser.secret[i].title%></h1>
 <p><%=  theuser.secret[i].content.substring(0,150) + " ..."%>
 
-<a style="color:#8e24aa" href="/eachpost/<%=theuser.secret[i]._id%>">Read More</a><br>
+<a style="color:#89dee2" href="/eachpost/<%=theuser.secret[i]._id%>">Read More</a><br>
 
 </p>Tags:
 <% for(var l=0;l<theuser.secret[i].tags.length;l++){%>
-<span style="color:white; background:#8e24aa; padding:4px; border-radius:3px;"><%=  theuser.secret[i].tags[l]%></span>
+<span style="color:white; background:#89dee2; padding:4px; border-radius:3px;"><%=  theuser.secret[i].tags[l]%></span>
   <% } %>
 <br><br>
 <% if(theuser.secret[i].blogImg!=undefined){ var str=theuser.secret[i].blogImg;%>
@@ -213,7 +213,7 @@ td {
 <img style=" width:33%;height:125px;object-fit: cover; margin-left: auto;margin-right: auto;" alt="here is it <%=theuser.secret[i].blogImg%>" src="/upload/<%= theuser.secret[i].blogImg3%>">
 <% } %>
 <% } %>
-<hr style="height:3px;border-width:0;color:gray;background-color:#8e24aa">
+<hr style="height:3px;border-width:0;color:gray;background-color:#89dee2">
   <%}%>
 </div>
 >

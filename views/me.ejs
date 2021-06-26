@@ -64,7 +64,7 @@
    }
    a:hover {
      text-decoration: none;
-     color: #8e24aa;
+     color: #89dee2;
 
    }
    * { padding:0;margin:0;}
@@ -84,7 +84,7 @@
      width:100%;
 
      background-image:url(https://i.pinimg.com/originals/de/06/e1/de06e1b1e4a49f033f52d1ae0a2d49ad.png);
-     background-color:#8e24aa;
+     background-color:#89dee2;
      background-size:cover;
    }
 
@@ -116,7 +116,7 @@
    }
    a:hover {
      text-decoration: none;
-     color: #8e24aa;
+     color: #89dee2;
      font-size:1.5rem;
    }
 
@@ -141,11 +141,11 @@
   </div>
 
       <div class="col-xs-12 col-sm-6 col-md-10">
-        <div class=""  style="color:#8e24aa;">
+        <div class=""  style="color:#89dee2;">
         <h2 style="  border-radius: 3px;"> &nbsp;&nbsp;<a style="" href="/eachuser/<%=usersWithSecrets._id%>"><%=usersWithSecrets.displayname%></a></h2>
         <p> &nbsp;&nbsp;&nbsp;About the author:<br> &nbsp;&nbsp;&nbsp;<%=usersWithSecrets.about%></p>
         <table width="100%">
-        <tr  style="background-color: #8e24aa; color:white; padding:6px;">
+        <tr  style="background-color: #89dee2; color:white; padding:6px;">
         	<th >Blogs</th>
           <th>Followers</th>
           <th>Following</th>
@@ -161,16 +161,16 @@
     </div>
 
   </div></div>
-  <hr style="height:3px;border-width:0;color:gray;background-color:#8e24aa">
-<h1 style="background-color:#8e24aa; opacity:; padding:5px; border-radius:3px;"> &nbsp;All your blogs:</h1><br>
+  <hr style="height:3px;border-width:0;color:gray;background-color:#89dee2">
+<h1 style="background-color:#89dee2; opacity:; padding:5px; border-radius:3px;"> &nbsp;All your blogs:</h1><br>
 
     <% usersWithSecrets.secret.forEach((user, i) => {%>
       <h1><%= user.title%></h1>
     <p><%=  user.content.substring(0,150) + " ..."%></p>
-    <a style="color:#8e24aa" href="/eachpost/<%=user._id%>">Read More</a><br>
+    <a style="color:#89dee2" href="/eachpost/<%=user._id%>">Read More</a><br>
     <br>Tags:
     <% for(var l=0;l<user.tags.length;l++){%>
-     <span style="color:white; background:#8e24aa; padding:4px; border-radius:3px;"><%=  user.tags[l]%></span>
+     <span style="color:white; background:#89dee2; padding:4px; border-radius:3px;"><%=  user.tags[l]%></span>
       <% } %>
     <br>    <br>
     <% if(user.blogImg!=undefined){var str=user.blogImg;%>
@@ -213,7 +213,7 @@
       <input type="hidden" type="text" name="theid" value="<%=  user._id%>">
       <button class="edit btn  btn-lg btn-danger" type="submit" style="font-size:24px"><i class="fa fa-trash-o"></i></button>
     </form>
-    <hr style="height:3px;border-width:0;color:gray;background-color:#8e24aa">
+    <hr style="height:3px;border-width:0;color:gray;background-color:#89dee2">
 
 
     <%}) %>

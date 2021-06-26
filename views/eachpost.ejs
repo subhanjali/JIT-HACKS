@@ -50,7 +50,7 @@ a {
 }
 a:hover {
   text-decoration: none;
-  color: #8e24aa;
+  color: #89dee2;
   font-size:2.5rem;
 }
 
@@ -72,7 +72,7 @@ a:hover {
     </div>
 
     <div class="col-xs-12 col-sm-6 col-md-10">
-      <div class="" style="color:#8e24aa;">
+      <div class="" style="color:#89dee2;">
         <h2  style="  border-radius: 3px;"> &nbsp;&nbsp;<a href="/eachuser/<%=posts._id%>"><%=posts.displayname%></a></h2>
         <p> &nbsp;&nbsp;&nbsp;About the author:<br> &nbsp;&nbsp;&nbsp;<%=posts.about%></p>
       </div>
@@ -80,16 +80,26 @@ a:hover {
 
   </div>
 </div>
-<hr style="height:3px;border-width:0;color:gray;background-color:#8e24aa">
+<hr style="height:3px;border-width:0;color:gray;background-color:#89dee2">
   <%for(var i=0;i<posts.secret.length;i++){%>
     <% if(JSON.stringify(posts.secret[i]._id)===JSON.stringify(theid)){%>
       <h1><%=posts.secret[i].title%></h1>
 
-      <span style="color:white; background:#8e24aa; padding:4px; border-radius:3px;">Favourites ❤️: </span> &nbsp;&nbsp;<%=posts.secret[i].favourites.length%><br><br>
+      <span style="color:white; background:#89dee2; padding:4px; border-radius:3px;">Favourites ❤️: </span> &nbsp;&nbsp;<%=posts.secret[i].favourites.length%><br><br>
     TAGS:   <% for(var l=0;l<posts.secret[i].tags.length;l++){%>
-      <span style="color:white; background:#8e24aa; padding:4px; border-radius:3px;"><%=  posts.secret[i].tags[l]%></span>
+      <span style="color:white; background:#89dee2; padding:4px; border-radius:3px;"><%=  posts.secret[i].tags[l]%></span>
         <% } %><br><br>
-      <p><%=posts.secret[i].content%></p>
+
+      <% function urlify(text) {%>
+    <%var urlRegex = /(https?:\/\/[^\s]+)/g;%>
+    <%return text.replace(urlRegex, function(url) {%>
+      <%return '<a href="' + url + '">' + url + '</a>  ';%>
+    <%})%>
+  <%}%>
+  <%var newp= posts.secret[i].content%>
+  <p onload="urlify(<%=newp%>)"></p>
+  <p><%=newp%></p>
+
 <br>
       <% if(posts.secret[i].blogImg!=undefined){var str=posts.secret[i].blogImg;%>
         <% var ext = str.substring(str.lastIndexOf("."),str.length+1);%>
@@ -124,9 +134,21 @@ a:hover {
   <%}%>
     <%}%>
 
-<hr style="height:3px;border-width:0;color:gray;background-color:#8e24aa">
+<hr style="height:3px;border-width:0;color:gray;background-color:#89dee2">
   </div>
 
 <!-- here -->
+<script type="text/javascript">
+  function urlify(text) {
+  var urlRegex = /(https?:\/\/[^\s]+)/g;
+  return text.replace(urlRegex, function(url) {
+    return '<a href="' + url + '">' + url + '</a>';
+  })
+  // or alternatively
+  // return text.replace(urlRegex, '<a href="$1">$1</a>')
+}
 
+var text = 'Find me at http://www.example.com and also at http://stackoverflow.com';
+var html = urlify(text);
+</script>
 <%- include('partials/footer') %>

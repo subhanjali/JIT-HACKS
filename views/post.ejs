@@ -50,7 +50,7 @@ a {
 }
 a:hover {
   text-decoration: none;
-  color: #8e24aa;
+  color: #89dee2;
   font-size:2.5rem;
 }
 
@@ -64,51 +64,51 @@ a:hover {
 </div></div>
   <% var no =0;%>
   <%  posts.forEach(function(post){ %>
-
+    <h1>Search results by title</h1>
+    <hr style="height:6px;border-width:0;color:gray;background-color:#89dee2">
 <%  for(var i=0;i<post.secret.length;i++){ %>
   <% if(post.secret[i].title.includes(searched)){no++;%>
-    <h1>Search results by title</h1>
-    <hr style="height:6px;border-width:0;color:gray;background-color:#8e24aa">
+
 
 
     <h4 style=""><%=post.secret[i].title%></h4>
     <p style="">
     <%=post.secret[i].content.substring(0, 150)+ " ..."%>
-    <a style="color:#8e24aa;" href="/eachpost/<%=post.secret[i]._id%>">Read More</a>
+    <a style="color:#89dee2;" href="/eachpost/<%=post.secret[i]._id%>">Read More</a>
     <br>
     <% for(var l=0;l<post.secret[i].tags.length;l++){%>
-    <span  style="color:white; background:#8e24aa; padding:4px; border-radius:3px;"><%=  post.secret[i].tags[l]%></span>
+    <span  style="color:white; background:#89dee2; padding:4px; border-radius:3px;"><%=  post.secret[i].tags[l]%></span>
 
       <% } %>
-    </p><hr style="height:3px;border-width:0;color:gray;background-color:#8e24aa">
+    </p><hr style="height:3px;border-width:0;color:gray;background-color:#89dee2">
 <%}%>
     <% }}) %>
     <%if(no===0){ %>
     <h3 style="">Sorry! No blogs with the searched title!</h3>
-    <hr style="height:3px;border-width:0;color:gray;background-color:#8e24aa">
+    <hr style="height:3px;border-width:0;color:gray;background-color:#89dee2">
       <%} %>
       <% var nope=0;%>
       <%  posts.forEach(function(post){ %>
-
+<h1>Search results by tags</h1><hr style="height:6px;border-width:0;color:gray;background-color:#89dee2">
     <%  for(var i=0;i<post.secret.length;i++){  %>
       <%for(var j=0;j<post.secret[i].tags.length;j++) if(post.secret[i].tags[j].includes(searched)){nope++;%>
-        <br><h1>Search results by tags</h1><hr style="height:6px;border-width:0;color:gray;background-color:#8e24aa">
+        <br>
         <h4 style=""><%=post.secret[i].title%></h4>
         <p style="">
         <%=post.secret[i].content.substring(0, 150)+ " ..."%>
 
-  <a style="color:#8e24aa;" href="/eachpost/<%=post.secret[i]._id%>">Read More</a><br>
+  <a style="color:#89dee2;" href="/eachpost/<%=post.secret[i]._id%>">Read More</a><br>
 
 
         <% for(var l=0;l<post.secret[i].tags.length;l++){%>
-        <span  style="color:white; background:#8e24aa; padding:4px; border-radius:3px;"><%=  post.secret[i].tags[l]%></span>
+        <span  style="color:white; background:#89dee2; padding:4px; border-radius:3px;"><%=  post.secret[i].tags[l]%></span>
           <% } %>
-        </p><hr style="height:3px;border-width:0;color:gray;background-color:#8e24aa">
+        </p><hr style="height:3px;border-width:0;color:gray;background-color:#89dee2">
     <%}%>
         <% }}) %>
         <%if(nope===0){ %>
         <h3 style="">Sorry! No blogs with the searched tag!</h3>
-        <hr style="height:3px;border-width:0;color:gray;background-color:#8e24aa">
+        <hr style="height:3px;border-width:0;color:gray;background-color:#89dee2">
           <%} %>
           <!-- <h3>3 Columns</h3>
 
