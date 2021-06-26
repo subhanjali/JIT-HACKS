@@ -2,6 +2,9 @@
 
 Share, Help & Care
 
+![c71](https://user-images.githubusercontent.com/56160262/123527393-c929e200-d6fc-11eb-9984-85c115c5a465.png)
+
+
 ## Description 
 
 - Since the past two years, the world has been facing the global pandemic Covid-19. In India, when the situation was just beginning to stabilize we were hit harder with the 2nd wave. This time the distress was intensified with serious lack of oxygen, plazma, hospital beds, food, vaccination. 
